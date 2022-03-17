@@ -18,7 +18,7 @@
 
     if($numRows> 0)
     {
-      $_SESSION['aid']= $row['id'];
+      $_SESSION['pid']= $row['uid'];
       header("location: guestbook-list.php"); 
     }
 
