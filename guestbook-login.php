@@ -5,7 +5,7 @@ require('config/config.php');
   if(isset($_POST['submit'])){
     $username=mysqli_real_escape_string($conn,$_POST['username']);
     $password=mysqli_real_escape_string($conn,$_POST['password']);
-    $query = "SELECT * FROM USERACCOUNT WHERE username ='$username' and password ='$password';";
+    $query = "SELECT * FROM account WHERE username ='$username' and password ='$password';";
     $result = mysqli_query($conn, $query);
     $count= mysqli_num_rows($result);   
     if($count>0){
