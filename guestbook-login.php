@@ -1,37 +1,21 @@
 <?php
-  
- require('config/config.php');
+require('config/config.php');
   require('config/db.php');
-  session_start();
-  
-  if(isset($_POST['submit']))
-  {
-    //if((isset($_POST['username']) && $_POST['username'] !='') && (isset($_POST['password']) && $_POST['password'] !=''))
-  //{
-    $un= $_POST['username'];
-    $pw= $_POST['password'];
 
-    $result= $conn->query("SELECT * FROM account WHERE username='$un' AND password='$pw'"); 
-
-    $row= $result ->Fetch_array();
-    $numRows= $result->num_rows;
-
-    if($numRows> 0)
-    {
-      $_SESSION['pid']= $row['uid'];
-      header("location: guestbook-list.php"); 
-    }
-
-    else
-    {
-      echo "Invalid Username or Password! <br> Please try again!";
+  if(isset($_POST['submit'])){
+    $username=mysqli_real_escape_string($conn,$_POST['username']);
+    $password=mysqli_real_escape_string($conn,$_POST['password']);
+    $query = "SELECT * FROM USERACCOUNT WHERE username ='$username' and password ='$password';";
+    $result = mysqli_query($conn, $query);
+    $count= mysqli_num_rows($result);   
+    if($count>0){
+      header('Location: guestbook-list.php');
+    }else {
+      echo 'ERROR: Wrong Username/Password';
     }
   }
-
-
-
-
 ?>
+
 <?php include('inc/header.php'); ?>
   <br/>
   <div style="width:30%; margin: auto; text-align: center;">
