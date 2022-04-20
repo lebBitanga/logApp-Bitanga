@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 27, 2021 at 07:06 PM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.12
+-- Generation Time: Apr 20, 2022 at 04:10 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `logapp`
+-- Database: `logapp-bitanga`
 --
 
 -- --------------------------------------------------------
@@ -28,17 +28,17 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `account` (
-  `idacc` int(11) NOT NULL,
+  `uid` int(10) NOT NULL,
   `username` varchar(45) NOT NULL,
-  `password` varchar(45) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `password` int(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `account`
 --
 
-INSERT INTO `account` (`id`, `user`, `pass`) VALUES
-(001, 'admin', '123');
+INSERT INTO `account` (`uid`, `username`, `password`) VALUES
+(1, 'leb123', 134);
 
 -- --------------------------------------------------------
 
@@ -47,23 +47,25 @@ INSERT INTO `account` (`id`, `user`, `pass`) VALUES
 --
 
 CREATE TABLE `person` (
-  `personid` int(11) NOT NULL,
-  `firstname` varchar(45) NOT NULL,
+  `pid` int(10) NOT NULL,
   `lastname` varchar(45) NOT NULL,
+  `firstname` varchar(45) NOT NULL,
   `address` varchar(45) NOT NULL,
-  `logdt` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `logdt` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `person`
 --
 
-INSERT INTO `person` (`personid`, `firstname`, `lastname`, `address`, `logdt`) VALUES
-(01, 'Lorwin', 'Bitanga', 'Batarza', '2022-03-12 05:20:10'),
-(02, 'Mae Kristine', 'Mendoza', 'Puerto', '2022-05-20 10:24:09'),
-(03, 'Francis Ceasar', 'Martinez', 'Gensan', '2022-08-26 11:19:22'),
-
-
+INSERT INTO `person` (`pid`, `lastname`, `firstname`, `address`, `logdt`) VALUES
+(1, 'BITANGA', 'Lorwin', 'San Manuel', '2022-04-20 21:48:05'),
+(2, 'Bitanga', 'Lorwin', 'Bulalacao Bataraza Palawan', '2022-04-20 22:01:06'),
+(3, 'Escubin', 'Elaiza', 'Labog', '2022-04-20 22:01:28'),
+(4, 'Bitanga', 'Akemi Shein', 'Brookes Point Palawan', '2022-04-20 22:01:59'),
+(5, 'mendoza', 'mae', 'Tiniquiban', '2022-04-20 22:04:31'),
+(6, 'martinez', 'Francis', 'Irawan', '2022-04-20 22:04:52'),
+(7, 'Bitanga', 'Lorwin', 'San Manuel', '2022-04-20 22:05:07');
 
 --
 -- Indexes for dumped tables
@@ -73,13 +75,13 @@ INSERT INTO `person` (`personid`, `firstname`, `lastname`, `address`, `logdt`) V
 -- Indexes for table `account`
 --
 ALTER TABLE `account`
-  ADD PRIMARY KEY (`idacc`);
+  ADD PRIMARY KEY (`uid`);
 
 --
 -- Indexes for table `person`
 --
 ALTER TABLE `person`
-  ADD PRIMARY KEY (`personid`);
+  ADD PRIMARY KEY (`pid`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -89,13 +91,13 @@ ALTER TABLE `person`
 -- AUTO_INCREMENT for table `account`
 --
 ALTER TABLE `account`
-  MODIFY `idacc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `uid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `person`
 --
 ALTER TABLE `person`
-  MODIFY `personid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `pid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
