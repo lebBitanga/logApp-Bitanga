@@ -11,13 +11,13 @@ This repo is for Practice Set 5-06
 # :pager: Log App Page
  
  # :computer: Registration Form
- ![Rform](images/index.PNG)
+ ![Rform](Images/index.PNG)
 
  # :computer: Guestbook-Login
- ![Gblogin](images/guestlogin.PNG)
+ ![Gblogin](Images/guestlogin.PNG)
  
  # :computer: Guestbook-list
- ![Gblist](images/guestlist.PNG)
+ ![Gblist](Images/guestlist.PNG)
 
 **********************
 
@@ -42,13 +42,13 @@ This repo is for Practice Set 5-06
  #  Authors :raising_hand:
 
  # :ok_woman: Lorwin Bitanga
- ![Me](images/Leb.jpg)
+ ![Me](Images/Leb.jpg)
 
  # :woman: Mae Kristine Mendoza
- ![mae](images/Mae.png)
+ ![mae](Images/Mae.png)
 
  # :man: Francis 
-![franz](images/Francis.jpg)
+![franz](Images/Francis.jpg)
 
 
 
